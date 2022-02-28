@@ -10,7 +10,18 @@
 # Affichez ces variables
 
 # réponse 2.1
-
+nombre = 42
+nombre_or = 1.61
+nickname_lastname = "alexandre chuffart"
+is_morning = True
+is_not_morning = False
+val_nul = None
+print(nombre)
+print(nombre_or)
+print(nickname_lastname)
+print(is_morning)
+print(is_not_morning)
+print(val_nul)
 # code 2.1
 # la fonction `round()` permet d'arrondir un float en un integer
 # 0,1 est arrondi à la valeur inférieur
@@ -31,3 +42,7 @@ print(round(1 / 3, 4))
 
 # réponse 2.2
 
+test1 = 2
+print(round(test1))
+test2 = 1.62 
+print(round(test2))
