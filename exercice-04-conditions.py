@@ -27,7 +27,7 @@ if number == 1:
 else:
     print("ne contient pas de 1")
 
-
+print("\n")
 # code 4.2
 # si 10 est un nombre pair, le modulo de 2 est égal à zéro
 # print(10 % 2)
@@ -48,10 +48,12 @@ print(number)
 # réponse 4.2
 
 
-if number % 2:
+if (number % 2) == 0:
     print("le chiffre est pair")
 else:
     print("le chiffre est impair")
+
+print("\n")
 
 
 # exo 4.3
@@ -73,7 +75,7 @@ else:
      print("le chiffre est divisible par 3")
 
 
-
+print("\n")
 # exo 4.4
 # écrivez un bloc if qui affiche
 # - "le nombre est supérieur ou égale à 5" si la variable number contient une valeur plus grande ou égale à 5
@@ -92,6 +94,7 @@ if number >= 5:
 else:
      print("le chiffre est inférieur a 5")
 
+print("\n")
 # exo 4.5
 # écrivez un bloc if qui affiche
 # - "le nombre est compris entre 0 et 49 inclus" si la variable number contient une valeur comprise entre 0 et 49
@@ -108,6 +111,7 @@ if number <= 49:
 else: 
     print("le nombre n'est pas compris entre 0 et 49 inclus")
 
+print("\n")
 # exo 4.6
 # écrivez un bloc if qui affiche
 # - "le nombre est compris entre 0 et 33 inclus" si la variable number contient une valeur comprise entre 0 et 33
@@ -128,6 +132,7 @@ elif number <= 34 >= 66:
 elif number >= 66:
     print("le nombre n'est pas compris entre 0 et 66 inclus")
 
+print("\n")
 # exo 4.7
 # écrivez un bloc if qui affiche
 # - "le nombre a est supérieur au nombre b" si la variable a contient une valeur plus grande que celle de la variable b
@@ -151,6 +156,8 @@ elif b > a:
 elif a == b:
     print("les deux nombres a et b sont égaux")
 
+
+print("\n")
 # code 4.3
 # affichage d'une variable avec une f-string
 number = 42
