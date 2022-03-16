@@ -61,13 +61,17 @@ print(texte.find("baz"))
 
 texte = "Bonjour Toto"
 
-
-if texte.find("Toto") >= 0:
-    print("On as trouvé Toto")
+keyword = "Toto"
+if texte.find(keyword) >= 0:
+    print(f"On as trouvé {keyword}")
 else :
-    print("On as pas retrouvé Toto")
+    print(f"On as pas retrouvé {keyword}")
 
-if texte.find("Titi") >= 0:
-    print("On as trouvé Titi")
+
+keyword = "Titi"
+
+
+if texte.find(keyword) >= 0:
+    print(f"On as trouvé {keyword}")
 else :
-    print("On as pas retrouvé Titi")
+    print(f"On as pas retrouvé {keyword}")
