@@ -43,6 +43,11 @@ print(round(1 / 3, 4))
 # réponse 2.2
 
 test1 = 2
-print(round(test1))
+print(int(test1))
 test2 = 1.62 
-print(round(test2))
+print(float(test2))
+test3 = 1.62
+test4 = (int(round(test3)))
+print(int(test4))
+test5 = 1.62
+print(round(test4,1))
