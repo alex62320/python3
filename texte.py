@@ -64,10 +64,10 @@ texte = "Bonjour Toto"
 
 if texte.find("Toto") >= 0:
     print("On as trouvé Toto")
-else < 0:
+else :
     print("On as pas retrouvé Toto")
 
 if texte.find("Titi") >= 0:
     print("On as trouvé Titi")
-else < 0 :
+else :
     print("On as pas retrouvé Titi")
