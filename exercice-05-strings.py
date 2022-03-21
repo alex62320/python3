@@ -8,7 +8,12 @@
 
 
 def multiplication(a: float, b: float) -> float:
-    """renvoie la multiplication des nombre a et b"""
+    """cette fonction renvoie le produit de deux nombres
+    
+    a float : le premier facteur
+    b float : le deuxieme facteur
+    return float : le produit des deux facteurs
+    """
     return a * b
 print(help(multiplication))
 # exo 5.2
