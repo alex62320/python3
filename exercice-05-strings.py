@@ -15,7 +15,7 @@ def multiplication(a: float, b: float) -> float:
     return float : le produit des deux facteurs
     """
     return a * b
-print(help(multiplication))
+help(multiplication)
 # exo 5.2
 # Trouvez la position de la chaîne de caractères `minim`
 my_text = """Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -80,4 +80,4 @@ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deseru
 
 # réponse 5.5
 lign_number = my_text.split('\n')
-print(len(lign_number))
+print(len(lign_number)- 1)
