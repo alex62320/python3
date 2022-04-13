@@ -15,13 +15,13 @@ nombre_or = 1.61
 nickname_lastname = "alexandre chuffart"
 is_morning = True
 is_not_morning = False
-val_nul = None
+null = None
 print(nombre)
 print(nombre_or)
 print(nickname_lastname)
 print(is_morning)
 print(is_not_morning)
-print(val_nul)
+print(null)
 # code 2.1
 # la fonction `round()` permet d'arrondir un float en un integer
 # 0,1 est arrondi à la valeur inférieur

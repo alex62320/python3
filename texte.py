@@ -75,3 +75,7 @@ if texte.find(keyword) >= 0:
     print(f"On as trouvé {keyword}")
 else :
     print(f"On as pas retrouvé {keyword}")
+
+#remplacement 
+texte ="Bnjour Toto"
+texte= texte.replace('Bnjour', 'Bonjour')

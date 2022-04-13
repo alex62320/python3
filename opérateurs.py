@@ -94,3 +94,20 @@ print(result)
 #verification de type de donnée
 result = type(123) is float
 print(result)
+
+#encadrement 
+from asyncore import loop
+import random
+
+
+a = 42 
+b = 123
+
+c = random.randint(1, 100)
+
+result = a < 50 < b 
+print(result)
+
+result = a < c < b 
+print(c)
+print(result)

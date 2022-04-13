@@ -23,9 +23,9 @@ print(number)
 
 
 if number == 1:
-    print("contient 1")
+    print("le nombre est égale à 1")
 else:
-    print("ne contient pas de 1")
+    print("le nombre est différent de 1")
 
 print("\n")
 # code 4.2

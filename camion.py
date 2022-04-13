@@ -1,32 +1,23 @@
-class Camion:
-    def __init__(self, marque: str, modele: str, carburant: str, type_carroserie: str, vitesse: int):
-        self._marque = marque
-        self._modele = modele
-        self._carburant = carburant
-        self._type_carroserie = type_carroserie
+from vehicule import Vehicule
+
+class Camion(Vehicule):
+    """
+    Cette classe représente un camion.
+    """
+    def __init__(self, marque: str, modele: str, carburant: str, vitesse: int, ptac : float):
+        super().__init__(marque,modele,carburant,vitesse)
         # il faut utiliser le setter s'il y a une procédure speciale de verification des données avant affectation
-        self._vitesse(vitesse)
+        self.set_ptac(ptac)
+        
 
-         #getter
-    def get_vitesse(self) -> int:
-        return self._vitesse
-    
-    #setter
-    def set_vitesse(self, vitesse: int):
-        if type(vitesse) is not int:
-                raise Exception("la vitesse doit être un nombre entier")
-        elif vitesse > 220:
-                raise Exception("la vitesse max est de 220")
-        elif vitesse < -10:
-                raise Exception("La vitesse min est de -10")
-        self._vitesse = vitesse
+    def __str__(self):
+        return super().__str__()+ f" {self._ptac}"
 
-    def accelerer(self):
-        vitesse = self.vitesse()
-        vitesse += 10
-        self.set_vitesse(vitesse)
+    def get_ptac(self) -> float:
+        return self._ptac
 
-    def ralentir(self):
-        vitesse = self.vitesse()
-        vitesse -= 10
-        self.set_vitesse(vitesse)
+    def set_ptac(self, ptac : float):
+        if type(ptac) != float:
+            raise Exception("le ptac doit etre un float")
+
+        self._ptac = ptac
