@@ -1,7 +1,11 @@
 # exercice-06-listes.py
 
+from ast import Invert
+from http.client import SWITCHING_PROTOCOLS
 from operator import index
 import random
+from re import M
+from statistics import multimode
 
 # Remarque 6.1
 # Dans le texte, quand il est écrit Xème position, cela correspond à l'index X-1
@@ -117,14 +121,25 @@ print("\n")
 my_list = [2.71, 42, 123, 2, 3.14, 1.61]
 
 # réponse 6.13
+list_multiple = []
 for i in my_list:
-    i * 100
-print(my_list)
+    i = i * 100
+    list_multiple.append(i)
+print(list_multiple)
+print("\n")
+
 # exo 6.14
 # Créez une deuxième liste ne contenant que les nombre entiers de la liste
 my_list = [2.71, 42, 123, 2, 3.14, 1.61]
 
 # réponse 6.14
+entier = []
+for i in my_list:
+    if type(i) is int:
+        entier.append(i)
+print('liste entier')
+print(entier)
+print("\n")
 
 # exo 6.15
 # Ici le but est d'intervertir les éléments de la liste deux à deux
@@ -138,13 +153,28 @@ my_list = [2.71, 42, 123, 2, 3.14, 1.61]
 my_list = [2.71, 42, 123, 2, 3.14, 1.61]
 
 # réponse 6.15
+for i in range(0, len(my_list) - 1, 1):
+    for j in range(0, len(my_list) - i - 1, 1):
+        if(my_list[j] > my_list[j+1]):
+            stock = my_list[j]
+            my_list[j] = my_list[j+1]
+            my_list[j+1] = stock
 
+print(my_list)
+
+print(my_list)
+print("\n")
 # exo 6.16
 # Triez la liste en utilisant l'algorithme du tri bulle puis affichez la liste
 my_list = [2.71, 42, 123, 2, 3.14, 1.61]
 
 # réponse 6.16
+for i in my_list:
+    my_list.sort()
 
+print("liste trié")
+print(my_list)
+print("\n")
 # code 6.1
 # Lire la valeur de la ligne `m` et de la colonne `n` d'un tableau en 2 dimensions
 # print(matrix[m][n])
@@ -157,7 +187,7 @@ matrix = [
 ]
 # Cette ligne affiche `6`
 print(matrix[1][2])
-
+print("\n")
 # exo 6.17
 # Affichez la valeur qui se trouve à la colonne 4, ligne 3
 # Attention : il faut faire `- 1` pour obtenir les index correspondant
@@ -168,20 +198,26 @@ for _ in range(0, size):
     row = [random.randint(40, 100) for _ in range(0, size)]
     matrix.append(row)
 
-print(matrix)
-
 # réponse 6.17
-
+print(matrix)
+print(matrix[3][2])
+print("\n")
 # code 6.2
 # Pour afficher toutes les combinaisons possibles de deux nombres de 0 à n inclus vous pouvez utiliser deux boucles `for` imbriquées
 #
 # Exemple de toutes les combinaisons possibles de deux nombres de 0 à 2 inclus
-for i in range(0, 3):
-    for j in range(0, 3):
-        print(i, j)
+
+# for i in range(0, 3):
+#     for j in range(0, 3):
+#         print(i, j)
 
 # exo 6.18
 # Avec le même tableau en 2 dimensions, affichez toutes les valeurs plus petites ou égales à 50 ainsi que leur cordoonnées (ligne et colonne)
 
 # réponse 6.18
+print(matrix)
 
+for i in range(len(matrix)):
+    for j in range(len(matrix[i])):
+        if matrix[i][j] <= 50:
+            print(i , j)
