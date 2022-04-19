@@ -71,24 +71,30 @@ for user in user_list:
 
 # réponse 12.4
 class ProductLorem:
-    def __init__(self, _name = '',_price = 0.0):
+    def __init__(self, _name: str,_price: float or int):
         self._name = _name
         self._price = _price
 
     def __str__(self) -> str:
         f"{self._name}, {self._price}"
 
+    #getter
     def get_name(self):
-        return self._name
-
-    def set_name(self):
         return self._name
 
     def get_price(self):
         return self._price
+
+    #setter
+    def set_name(self, name):
+        if type(name) is not str:
+            raise Exception("le nom est invalide (chiffre interdit)")
+    def set_price(self, price):
+        if type(price) is not float or int:
+            raise Exception("le price dois etre un nombre")
+
     
-    def set_price(self):
-        return self._price
+
 # exo 12.5
 # Créez 3 instances de la classe `ProductLorem` et affectez les valeurs suivantes à ses attributs en utilisant les setters :
 # - product1
@@ -113,10 +119,12 @@ product3 = ProductLorem('Baz', 16.18)
 # réponse 12.6
 products = [product1,product2,product3]
 
+total_price = 0
+for i in products:
+    print(i.get_name(), i.get_price())
+    total_price += i.get_price()
 
-
-
-
+print(round(total_price, 2))
 # exo 12.7
 # Créez une classe nommée `ProductIpsum` qui possède les attributs suivants :
 # - _name: valeur str transmise par le constructeur
@@ -133,7 +141,42 @@ products = [product1,product2,product3]
 # - get_tax_fee() : cette méthode calcule le montant de la taxe et le renvoit ; par exmeple pour un produit de 100 € et une taxe de 20 %, le résultat est 20.0
 # - get_tax_included_price() : cette méthode calcule le prix taxe incluse et le renvoit ; par exemple pour un produit de 100 € et une taxe de 20 %, le résultat est 120.0
 # réponse 12.7
+class ProductIpsum:
+    def __init__(self, _name: str,_price: float or int,_tax: float or int):
+        self._name = _name
+        self._price = _price
+        self._tax = _tax
 
+    def __str__(self) -> str:
+        f"{self._name}, {self._price}, {self._tax}"
+    
+    #getter
+    def get_name(self):
+        return self._name
+
+    def get_price(self):
+        return self._price
+
+    def get_tax(self):
+        return self._tax
+
+    def get_tax_fee(self):
+        return self._price * (self._tax / 100)
+    
+    def get_tax_included_price(self):
+        return self.get_tax_fee() + self._price
+    #setter
+    def set_price(self, _price):
+        if type(_price) is not float or int:
+            raise Exception("le price dois etre un nombre")
+
+    def set_name(self,_name):
+        if type(_name) is not str:
+            raise Exception("le nom est invalide (chiffre interdit)")
+
+    def set_tax(self, _tax):
+        if type(_tax) is not float or int:
+            raise Exception("la tax dois etre un nombre")
 # exo 12.8
 # Créez 3 instances de la classe `ProductIpsum` et affectez les valeurs suivantes à ses attributs en utilisant le constructeur :
 # - product1
@@ -150,6 +193,9 @@ products = [product1,product2,product3]
 #   - tax: 5.5
 
 # réponse 12.8
+product_Ip1 = ProductIpsum('Dolor', 31.41, 20)
+product_Ip2 = ProductIpsum('Sit', 27.18, 10)
+product_Ip3 = ProductIpsum('Amet', 16.18, 5.5)
 
 # exo 12.9
 # Ajoutez chacune des instances de la classe `ProductIpsum` à une liste nommée `products`
@@ -161,4 +207,22 @@ products = [product1,product2,product3]
 # Et affichez-en des arrondis à 2 chiffres après la virgule, après la boucle `for`
 
 # réponse 12.9
+products_Ipsum= []
+products_Ipsum.append(product_Ip1)
+products_Ipsum.append(product_Ip2)
+products_Ipsum.append(product_Ip3)
 
+total_price = 0
+total_tax = 0
+total_price_with_tax = 0
+
+for product in products_Ipsum:
+    total_price += product.get_price()
+    total_tax += product.get_tax()
+    total_price_with_tax += product.get_tax_included_price()
+    print('produit:', product.get_name(), "prix(sans taxe):",
+          round(product.get_price(), 2), "prix(total):", round(product.get_tax_included_price(), 2))
+
+print("total price:", round(total_price), '€')
+print("total tax:", round(total_tax), '€')
+print("total price with tax:", round(total_price_with_tax), '€')
