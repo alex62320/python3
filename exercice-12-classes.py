@@ -90,7 +90,7 @@ class ProductLorem:
         if type(name) is not str:
             raise Exception("le nom est invalide (chiffre interdit)")
     def set_price(self, price):
-        if type(price) is not float or int:
+        if type(price) is not float or type(price) is not int:
             raise Exception("le price dois etre un nombre")
 
     
@@ -167,7 +167,7 @@ class ProductIpsum:
         return self.get_tax_fee() + self._price
     #setter
     def set_price(self, _price):
-        if type(_price) is not float or int:
+        if type(_price) is not float or type(_price) is not int:
             raise Exception("le price dois etre un nombre")
 
     def set_name(self,_name):
@@ -175,8 +175,9 @@ class ProductIpsum:
             raise Exception("le nom est invalide (chiffre interdit)")
 
     def set_tax(self, _tax):
-        if type(_tax) is not float or int:
+        if type(_tax) is not float or type(_tax) is not int:
             raise Exception("la tax dois etre un nombre")
+
 # exo 12.8
 # Créez 3 instances de la classe `ProductIpsum` et affectez les valeurs suivantes à ses attributs en utilisant le constructeur :
 # - product1
